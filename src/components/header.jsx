@@ -23,9 +23,9 @@ const Header = () => {
 
   return (
     <>
-      <nav className="py-4 flex justify-between items-center">
+      <nav className="py-10 flex justify-between items-center">
         <Link to="/">
-          <img src="/logo.png" className="h-16" alt="Trimrr Logo" />
+        <h1 className="h-10 font-extrabold text-4xl flex flex-row">SHOrtnrr<span className="text-orange-500">/.</span></h1>
         </Link>
         <div className="flex gap-4">
           {!user ? (

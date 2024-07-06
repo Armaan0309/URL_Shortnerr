@@ -1,7 +1,7 @@
-import {Button} from "@/components/ui/button";
-import {Input} from "@/components/ui/input";
-import {useState} from "react";
-import {useNavigate} from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Accordion,
   AccordionContent,
@@ -20,58 +20,60 @@ const LandingPage = () => {
 
   return (
     <div className="flex flex-col items-center">
-      <h2 className="my-10 sm:my-16 text-3xl sm:text-6xl lg:text-7xl text-white text-center font-extrabold">
-        The only URL Shortener <br /> you&rsquo;ll ever need! 👇
+      <h2 className="my-10 sm:my-16 text-3xl sm:text-6xl lg:text-7xl text-white tracking-wide text-center font-bold">
+        The URL <span className="text-orange-500">Shortner</span> Place <br />
+        that&rsquo;ll you need! <span className="text-2xl sm:text-6xl">👇</span>
       </h2>
       <form
         onSubmit={handleShorten}
         className="sm:h-14 flex flex-col sm:flex-row w-full md:w-2/4 gap-2"
       >
         <Input
-          type="url"
-          placeholder="Enter your loooong URL"
-          value={longUrl}
-          onChange={(e) => setLongUrl(e.target.value)}
-          className="h-full flex-1 py-4 px-4"
+        type="url"
+        value={longUrl}
+        onChange={(e) => setLongUrl(e.target.value)}
+        placeholder="Enter URL that is to be shorten...."
+        className="h-full flex-1 py-4 px-4"
         />
-        <Button type="submit" className="h-full" variant="destructive">
-          Shorten!
+        <Button
+          type="submit"
+          className="h-full py-4 px-6 font-bold bg-orange-500 text-white text-xl tracking-wider"
+        >
+          Sort It
         </Button>
       </form>
-      <img
-        src="/banner1.jpg" // replace with 2 in small screens
-        className="w-full my-11 md:px-11"
-      />
-      <Accordion type="multiple" collapsible className="w-full md:px-11">
+      
+
+      <Accordion type="multiple" collapsible className="w-full mt-10 md:px-11">
         <AccordionItem value="item-1">
-          <AccordionTrigger>
-            How does the Trimrr URL shortener works?
+          <AccordionTrigger className="text-2xl">
+            What is the purpose of this Website ?
           </AccordionTrigger>
-          <AccordionContent>
-            When you enter a long URL, our system generates a shorter version of
-            that URL. This shortened URL redirects to the original long URL when
-            accessed.
+          <AccordionContent className="text-xl">
+            The idea is to minimize the web page address into something that's
+            easier to remember and track.
           </AccordionContent>
         </AccordionItem>
+
         <AccordionItem value="item-2">
-          <AccordionTrigger>
-            Do I need an account to use the app?
-          </AccordionTrigger>
-          <AccordionContent>
-            Yes. Creating an account allows you to manage your URLs, view
-            analytics, and customize your short URLs.
+          <AccordionTrigger className="text-2xl">How to use this ?</AccordionTrigger>
+          <AccordionContent className="text-xl">
+            Go to a website and select the URL in the address bar and Copy the URL<br />
+            Go to the URL shortener website and paste the URL into the space
+            provided  <br />Click a button to shorten the URL <br />Copy the shortened URL<br />
+            Share the shortened URL in emails, chats, or on sites.
           </AccordionContent>
         </AccordionItem>
+
         <AccordionItem value="item-3">
-          <AccordionTrigger>
-            What analytics are available for my shortened URLs?
-          </AccordionTrigger>
-          <AccordionContent>
-            You can view the number of clicks, geolocation data of the clicks
-            and device types (mobile/desktop) for each of your shortened URLs.
+          <AccordionTrigger className="text-2xl">Do i need to login ?</AccordionTrigger>
+          <AccordionContent className="text-xl">
+            Yes, you have to create an account, so that you can manage all the links you provided for!
           </AccordionContent>
         </AccordionItem>
       </Accordion>
+
+
     </div>
   );
 };
